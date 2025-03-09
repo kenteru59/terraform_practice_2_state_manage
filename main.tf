@@ -55,11 +55,7 @@ resource "aws_dynamodb_table" "terraform_locks" {
 # TerraformのstateファイルをS3に保存する
 terraform {
   backend "s3" {
-    bucket         = "terraform-up-and-running-state-20250309"
     key            = "global/s3/terraform.tfstate"
-    region         = "ap-northeast-1"
-    dynamodb_table = "terraform-up-and-running-locks"
-    encrypt        = true
   }
 }
 
